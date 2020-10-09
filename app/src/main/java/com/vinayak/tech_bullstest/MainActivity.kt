@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity()
     lateinit var moviesAdapter: MoviesAdapter
     lateinit var rv_movies: RecyclerView
     lateinit var etSearch: EditText
+    lateinit var txtToolbarTitle: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +61,9 @@ class MainActivity : AppCompatActivity()
         rv_movies = findViewById(R.id.rv_movies)
         layoutManager = LinearLayoutManager(context)
         rv_movies.layoutManager = layoutManager
+        txtToolbarTitle = findViewById(R.id.txtToolbarTitle)
+
+        txtToolbarTitle.text = "Tech-Bulls"
     }
 
     private fun getMovies(serachString: String)
